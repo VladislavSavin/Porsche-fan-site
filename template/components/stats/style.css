@@ -1,0 +1,134 @@
+/* ============================================
+КОМПОНЕНТ: БЛОК СТАТИСТИКИ
+Файл: template/components/stats/style.css
+============================================ */
+
+/* --- 1. Основная секция --- */
+.stats-section {
+    padding: 6rem 2rem;
+    background: #050505; /* Самый темный фон, чтобы выделить цифры */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    /* Вырыв из контейнера на всю ширину */
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+/* --- 2. Сетка (3 колонки) --- */
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item {
+    position: relative;
+    padding: 1rem;
+}
+
+/* Декоративные вертикальные линии между колонками */
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1rem;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(212, 160, 23, 0.3), transparent);
+}
+
+/* --- 3. Цифры и текст --- */
+.stat-number-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-number {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 900;
+    color: var(--color-gold, #d4a017);
+    letter-spacing: -0.02em;
+    font-family: 'Arial Black', system-ui, sans-serif;
+    text-shadow: 0 4px 20px rgba(212, 160, 23, 0.2);
+}
+
+.stat-suffix {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--color-gold, #d4a017);
+    font-weight: 700;
+    margin-left: 0.2rem;
+    margin-top: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: var(--color-text, #fff);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.stat-desc {
+    font-size: 0.85rem;
+    color: #777;
+    letter-spacing: 0.05em;
+}
+
+/* --- 4. Анимация мигания --- */
+@keyframes statBlink {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 4px 20px rgba(212, 160, 23, 0.2);
+    }
+    50% {
+        opacity: 0.2;
+        text-shadow: none;
+    }
+}
+
+.stat-number.blink {
+    animation: statBlink 0.5s ease-in-out 3;
+}
+
+/* --- 5. Доступность (Отключение анимаций) --- */
+@media (prefers-reduced-motion: reduce) {
+    .stat-number.blink {
+        animation: none;
+    }
+}
+
+/* --- 6. Адаптив (Мобильные устройства) --- */
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 4rem 1rem;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr; /* В одну колонку */
+        gap: 3.5rem; /* Чуть увеличили отступ для воздуха */
+    }
+
+    /* Меняем вертикальные линии на горизонтальные */
+    .stat-item:not(:last-child)::after {
+        right: auto;
+        top: auto;
+        bottom: -1.75rem; /* Центрируем между элементами */
+        left: 15%;
+        width: 70%; /* Линия чуть шире */
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(212, 160, 23, 0.3), transparent);
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,68 @@
+/* Контейнер для меню */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;  /* Расстояние между элементами */
+    flex-wrap: wrap;  /* Для мобильных устройств */
+    justify-content: center;
+}
+
+/* Стили для ссылок */
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Эффект при наведении */
+.nav-link:hover {
+    color: #d4a017;  /* Золотой цвет как у точки в логотипе */
+}
+
+/* Дополнительный эффект - подчеркивание при наведении */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d4a017;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Стили для разделителей */
+.separator {
+    color: #666;  /* Серый цвет для разделителей */
+    font-weight: 300;
+    font-size: 18px;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .separator {
+        font-size: 14px;
+    }
+}
+
+.logo-img {
+    height: clamp(30px, 5vw, 50px);  /* От 30 до 50px в зависимости от экрана */
+    width: auto;
+    vertical-align: middle;
+}

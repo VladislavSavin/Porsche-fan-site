@@ -1,0 +1,329 @@
+/* ============================================
+1. ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ И СБРОС СТИЛЕЙ
+============================================ */
+:root {
+    /* Цветовая палитра сайта */
+    --color-bg: #1A1A1A;
+    --color-black: #000000;
+    --color-dark-gray: #111111;
+    --color-gold: #d4a017;
+    --color-text: #ffffff;
+    --color-text-muted: #aaaaaa;
+    --color-border: #333333;
+
+    /* Шрифт */
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+/* Плавная прокрутка для якорей (например, кнопки "Смотреть модели") */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-bg);
+    background-size: cover;
+    color: var(--color-text);
+    min-height: 100vh;
+    /* Защита от горизонтального скролла, если анимации вылезают за края */
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/* ============================================
+2. ШАПКА САЙТА (HEADER)
+============================================ */
+.header {
+    background: var(--color-black);
+    border-bottom: 3px solid var(--color-gold);
+    width: 100%;
+}
+
+/* Верхняя часть шапки с лого */
+.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.headerUp {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Стили для ссылки-обертки логотипа */
+.headerUp a {
+    color: var(--color-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Отступ между картинкой и текстом */
+}
+
+/* Нижняя часть шапки с меню */
+.headerDown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    background: var(--color-dark-gray);
+    border-top: 1px solid var(--color-border);
+}
+
+.desktop-only {
+    display: flex;
+}
+
+/* ============================================
+3. НАВИГАЦИЯ (ДЕСКТОП)
+============================================ */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--color-gold);
+}
+
+/* Золотая полоска при наведении на пункт меню */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.separator {
+    color: #666;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.logo-img {
+    height: clamp(30px, 5vw, 50px);
+    width: auto;
+    vertical-align: middle;
+}
+
+/* ============================================
+4. ФУТЕР
+============================================ */
+.footer {
+    background: var(--color-dark-gray);
+    color: var(--color-text);
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer__content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer__copy {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.footer__disclaimer {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.6;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.footer__disclaimer p {
+    margin-bottom: 0.8rem;
+}
+
+.footer__disclaimer p:last-child {
+    margin-bottom: 0;
+}
+
+.footer__disclaimer strong {
+    color: #888;
+}
+
+.footer__contacts {
+    font-size: 0.75rem;
+    color: #444;
+}
+
+/* ============================================
+5. АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+============================================ */
+
+/* Планшеты и телефоны (до 768px) */
+@media (max-width: 768px) {
+    /* Скрываем десктопное меню, на его место встанет бургер */
+    .desktop-only {
+        display: none !important;
+    }
+
+    .header-top {
+        padding: 15px 20px;
+        /* Прижимаем логотип влево, чтобы бургер справа не перекрывал его */
+        justify-content: flex-start;
+    }
+
+    .headerUp {
+        font-size: 18px; /* Чуть уменьшаем шрифт на телефонах */
+        text-align: left;
+    }
+
+    /* Уменьшаем отступ между картинкой лого и текстом */
+    .headerUp a {
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .logo-img {
+        height: 35px; /* Фиксируем размер лого на мобилках */
+    }
+
+    /* Уменьшаем отступы футера на телефонах */
+    .footer {
+        padding: 2rem 1rem;
+    }
+
+    .footer__disclaimer {
+        padding: 1rem;
+        font-size: 0.75rem;
+    }
+}
+
+
+/* ============================================
+ДИНАМИЧЕСКАЯ КНОПКА "НАВЕРХ" (С ПРОГРЕССОМ)
+============================================ */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #111;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold, #d4a017);
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 9998;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    /* Начальное скрытое состояние (с эффектом пружины) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px) scale(0.8);
+
+    /* Пружинистая анимация появления (cubic-bezier) */
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Класс, который добавляет JS при скролле */
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.scroll-top-btn:hover {
+    background: var(--color-gold, #d4a017);
+    color: #000;
+}
+
+/* --- SVG Круг прогресса --- */
+.progress-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg); /* Поворачиваем, чтобы прогресс начинался сверху */
+    pointer-events: none;
+}
+
+.progress-circle circle {
+    fill: none;
+    stroke-width: 4;
+}
+
+/* Фоновая дорожка (темно-серая) */
+.progress-circle__bg {
+    stroke: rgba(255, 255, 255, 0.1);
+}
+
+/* Золотая полоска прогресса */
+.progress-circle__bar {
+    stroke: var(--color-gold, #d4a017);
+    stroke-dasharray: 176; /* Длина окружности (2 * Pi * 28 ≈ 176) */
+    stroke-dashoffset: 176; /* Изначально полностью скрыта */
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+/* Меняем цвет полоски при наведении на кнопку */
+.scroll-top-btn:hover .progress-circle__bar {
+    stroke: #000; /* Чтобы на золотом фоне кнопки полоска была видна */
+}
+
+/* Уменьшаем размер на мобилках */
+@media (max-width: 768px) {
+    .scroll-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    .progress-circle {
+        width: 50px;
+        height: 50px;
+        /* Пересчитываем длину для радиуса 23: 2*Pi*23 = 144 */
+    }
+    .progress-circle circle {
+        r: 23; /* Уменьшаем радиус для мобильного SVG */
+        stroke-dasharray: 144;
+        stroke-dashoffset: 144;
+    }
+}

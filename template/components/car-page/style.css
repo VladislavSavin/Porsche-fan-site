@@ -1,0 +1,497 @@
+/* ============================================
+СТРАНИЦА АВТОМОБИЛЯ (CAR PAGE)
+Файл: template/components/car-page/style.css
+============================================ */
+
+/* --- 1. Основная разметка страницы --- */
+.car-page {
+    /* Вырываем блок из ограничений Bootstrap container */
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 2rem 3rem;
+    box-sizing: border-box;
+}
+
+.car-page__main {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- 2. ЛЕВАЯ КОЛОНКА: Фото и галерея --- */
+.car-page__media {
+    background: transparent;
+    padding: 0;
+    width: 100%;
+    position: sticky; /* Фото "прилипает" при скролле на десктопе */
+    top: 2rem;
+}
+
+.main-photo-wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    min-height: 400px; /* Чтобы блок не прыгал при загрузке */
+}
+
+.car-page__photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 2rem;
+    transition: opacity 0.6s ease-in-out;
+    will-change: opacity;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* Нижняя картинка (задает высоту блока) */
+.photo-base {
+    position: relative;
+    z-index: 1;
+}
+
+/* Верхняя картинка (накладывается поверх для плавной смены цвета) */
+.photo-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Миниатюры */
+.thumbnail-gallery {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.thumbnail-item {
+    width: 120px;
+    height: 75px;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    background: var(--color-dark-gray, #0f0f0f);
+    opacity: 0.8;
+    filter: grayscale(30%);
+}
+
+.thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.thumbnail-item:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.thumbnail-item.active {
+    opacity: 1;
+    filter: grayscale(0%);
+    border-color: var(--color-gold, #d4a017);
+    box-shadow: 0 5px 15px rgba(212, 160, 23, 0.4);
+    transform: translateY(-3px);
+}
+
+/* --- 3. ПРАВАЯ КОЛОНКА: Информация --- */
+.car-page__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.car-page__title {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    color: var(--color-text, #fff);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+.car-page__subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted, #aaa);
+    border-left: 3px solid var(--color-gold, #d4a017);
+    padding-left: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.car-page__description {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+/* Блок с цветами */
+.car-page__colors {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--color-dark-gray, #0f0f0f);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.colors-label {
+    color: var(--color-text-muted, #aaa);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.colors-label span {
+    color: var(--color-text, #fff);
+    font-weight: 600;
+}
+
+.color-swatches {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.color-swatch {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--swatch);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.color-swatch.active {
+    border-color: var(--color-gold, #d4a017);
+    box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.25), inset 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Блок характеристик */
+.car-page__specs {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--color-dark-gray, #0f0f0f);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.specs-title {
+    color: var(--color-text, #fff);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.spec-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-gold, #d4a017);
+    font-weight: 600;
+}
+
+.spec-value {
+    font-size: 1.1rem;
+    color: var(--color-text, #fff);
+    font-weight: 600;
+}
+
+/* Цена и кнопка */
+.car-page__price {
+    font-size: 1.8rem;
+    color: var(--color-text, #fff);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+}
+
+.btn-order {
+    display: inline-block;
+    background: var(--color-gold, #d4a017);
+    color: #000;
+    border: 2px solid var(--color-gold, #d4a017);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: all 0.25s ease;
+    text-align: center;
+    width: fit-content;
+}
+
+.btn-order:hover {
+    background: transparent;
+    color: var(--color-gold, #d4a017);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(212, 160, 23, 0.25);
+}
+
+/* ============================================
+4. МОДАЛЬНОЕ ОКНО ЗАЯВКИ
+============================================ */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+.modal__content {
+    position: relative;
+    background: var(--color-dark-gray, #0f0f0f);
+    width: 100%;
+    max-width: 450px;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(212, 160, 23, 0.3);
+    padding: 3rem;
+    z-index: 1;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    transform: translateY(30px) scale(0.95);
+    transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    margin: 1rem; /* Защита от прилипания к краям экрана на мобилках */
+}
+
+.modal.active .modal__content {
+    transform: translateY(0) scale(1);
+}
+
+.modal__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    color: #777;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.modal__close:hover {
+    color: var(--color-gold, #d4a017);
+    transform: rotate(90deg);
+}
+
+.modal__title {
+    color: var(--color-text, #fff);
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.modal__subtitle {
+    color: var(--color-gold, #d4a017);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+}
+
+/* Поля ввода */
+.modal__input-group {
+    margin-bottom: 1.2rem;
+}
+
+.modal__input-group input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.2rem;
+    border-radius: 0.8rem;
+    color: var(--color-text, #fff);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.modal__input-group input:focus {
+    outline: none;
+    border-color: var(--color-gold, #d4a017);
+    background: rgba(212, 160, 23, 0.05);
+}
+
+.modal__input-group input::placeholder {
+    color: #666;
+}
+
+/* Кнопка отправки */
+.modal__btn {
+    width: 100%;
+    background: var(--color-gold, #d4a017);
+    color: #000;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.modal__btn:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+/* Экран успеха */
+.modal__success {
+    text-align: center;
+    animation: fadeInScale 0.5s ease forwards;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(212, 160, 23, 0.1);
+    border: 2px solid var(--color-gold, #d4a017);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    font-size: 2.5rem;
+    color: var(--color-gold, #d4a017);
+    box-shadow: 0 0 30px rgba(212, 160, 23, 0.2);
+}
+
+.modal__text {
+    color: var(--color-text-muted, #aaa);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+5. АДАПТИВ (МОБИЛЬНЫЕ УСТРОЙСТВА)
+============================================ */
+
+/* Планшеты (от 769px до 992px) */
+@media (max-width: 992px) {
+    .car-page {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 1.5rem;
+    }
+
+    .car-page__main {
+        grid-template-columns: 1fr; /* В одну колонку */
+        gap: 2rem;
+    }
+
+    /* На мобильных отключаем sticky, чтобы фото не наезжало на текст */
+    .car-page__media {
+        position: static;
+    }
+
+    .car-page__photo {
+        max-height: 50vh;
+    }
+
+    .main-photo-wrap {
+        min-height: auto; /* Убираем фиксированную высоту */
+    }
+}
+
+/* Телефоны (до 480px) */
+@media (max-width: 480px) {
+    .car-page {
+        padding: 1.5rem 1rem;
+    }
+
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-order {
+        width: 100%;
+    }
+
+    /* Уменьшаем отступы модалки на телефонах */
+    .modal__content {
+        padding: 2rem 1.5rem;
+    }
+
+    .modal__title {
+        font-size: 1.5rem;
+    }
+
+    .success-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+}

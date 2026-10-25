@@ -1,0 +1,651 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "category": "911",
+      "folder": "911-carrera",
+      "image": "carrera.avif",
+      "model": "911 Carrera T",
+      "subtitle": "Сердце легенды",
+      "description": "Porsche 911 Carrera — это эталон спортивного автомобиля и идеальный баланс между мощью, повседневным комфортом и узнаваемым силуэтом, который остается неизменным уже более полувека.",
+      "specs": {
+        "Двигатель": "3.0 Twin-Turbo (оппозитный, 6 цил.)",
+        "Мощность": "394 л.с. (290 кВт)",
+        "Крутящий момент": "450 Нм",
+        "Разгон 0–100 км/ч": "4.1 с (3.9 с Sport Chrono)",
+        "Максимальная скорость": "294 км/ч",
+        "Объём двигателя": "2 981 см³",
+        "Привод": "Задний (RWD)",
+        "КПП": "8-ступенчатая PDK"
+      },
+      "price": "от 12 500 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.png", "white-2.png", "white-3.png", "white-4.png"]
+        },
+        {
+          "name": "Красный",
+          "hex": "#b3121a",
+          "images": ["red-1.png", "red-2.png", "red-3.png", "red-4.png"]
+        },
+        {
+          "name": "Сиреневый",
+          "hex": "#c8a2c8",
+          "images": ["purple-1.png", "purple-2.png", "purple-3.png", "purple-4.png"]
+        },
+        {
+          "name": "Желтый",
+          "hex": "#FFFF66",
+          "images": ["yellow-1.png", "yellow-2.png", "yellow-3.png", "yellow-4.png"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "911",
+      "folder": "911-gt3",
+      "image": "GT3.avif",
+      "model": "911 GT3",
+      "subtitle": "ДНК автоспорта",
+      "description": "Porsche 911 GT3 — это гоночный болид, легализованный для дорог общего пользования. Атмосферный оппозитный двигатель и аэродинамика, отточенная на легендарной трассе Нюрбургринг, дарят чистое удовольствие от вождения.",
+      "specs": {
+        "Двигатель": "4.0 атмосферный (оппозитный, 6 цил.)",
+        "Мощность": "510 л.с. (375 кВт)",
+        "Крутящий момент": "450 Нм",
+        "Разгон 0–100 км/ч": "3.4 с",
+        "Максимальная скорость": "311 км/ч (с PDK) / 318 км/ч",
+        "Объём двигателя": "3 996 см³",
+        "Макс. обороты": "9 000 об/мин",
+        "Привод": "Задний (RWD)",
+        "КПП": "7-ступенчатая PDK / 6-ступенчатая МКПП"
+      },
+      "price": "от 32 000 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Синий",
+          "hex": "#003152",
+          "images": ["blue-1.jpg", "blue-2.jpg", "blue-3.jpg", "blue-4.jpg"]
+        },
+        {
+          "name": "Красный",
+          "hex": "#b3121a",
+          "images": ["red-1.jpg", "red-2.jpg", "red-3.jpg", "red-4.jpg"]
+        },
+        {
+          "name": "Серый",
+          "hex": "#bbbbbb",
+          "images": ["grey-1.jpg", "grey-2.jpg", "grey-3.jpg", "grey-4.jpg"]
+        },
+        {
+          "name": "Желтый",
+          "hex": "#FFFF66",
+          "images": ["yellow-1.jpg", "yellow-2.jpg", "yellow-3.jpg", "yellow-4.jpg"]
+        },
+        {
+          "name": "Зелёный",
+          "hex": "#232e28",
+          "images": ["green-1.jpg", "green-2.jpg", "green-3.jpg", "green-4.jpg"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "macan",
+      "folder": "macan",
+      "image": "macan.avif",
+      "model": "Macan",
+      "subtitle": "Характер спорткара",
+      "description": "Porsche Macan — это компактный SUV, который не изменяет принципам бренда. Он сочетает в себе практичность на каждый день с острой управляемостью и динамикой, достойной настоящего спорткара.",
+      "specs": {
+        "Двигатель": "2.0 Turbo (4 цил.)",
+        "Мощность": "265 л.с. (195 кВт)",
+        "Крутящий момент": "400 Нм",
+        "Разгон 0–100 км/ч": "6.4 с (6.2 с Sport Chrono)",
+        "Максимальная скорость": "232 км/ч",
+        "Объём двигателя": "1 984 см³",
+        "Привод": "Полный (AWD)",
+        "КПП": "7-ступенчатая PDK"
+      },
+      "price": "от 7 900 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Синий",
+          "hex": "#003152",
+          "images": ["blue-1.jpg", "blue-2.jpg", "blue-3.jpg", "blue-4.jpg"]
+        },
+        {
+          "name": "Красный",
+          "hex": "#b3121a",
+          "images": ["red-1.jpg", "red-2.jpg", "red-3.jpg", "red-4.jpg"]
+        },
+        {
+          "name": "Серый",
+          "hex": "#bbbbbb",
+          "images": ["grey-1.jpg", "grey-2.jpg", "grey-3.jpg", "grey-4.jpg"]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "taycan",
+      "folder": "taycan",
+      "image": "taycan.avif",
+      "model": "Taycan",
+      "subtitle": "Будущее без компромиссов",
+      "description": "Porsche Taycan — первый полностью электрический спорткар марки. Мгновенная тяга, инновационные технологии и фирменная управляемость доказывают, что электричество может быть по-настоящему драйверским.",
+      "specs": {
+        "Двигатель": "Синхронный электромотор",
+        "Мощность": "408 л.с. (300 кВт)",
+        "Крутящий момент": "345 Нм",
+        "Разгон 0–100 км/ч": "5.4 с",
+        "Максимальная скорость": "230 км/ч",
+        "Батарея": "79.2 кВт⋅ч",
+        "Привод": "Задний (RWD)",
+        "КПП": "2-ступенчатая автоматическая"
+      },
+      "price": "от 10 000 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Синий",
+          "hex": "#003152",
+          "images": ["blue-1.jpg", "blue-2.jpg", "blue-3.jpg", "blue-4.jpg"]
+        },
+        {
+          "name": "Красный",
+          "hex": "#b3121a",
+          "images": ["red-1.jpg", "red-2.jpg", "red-3.jpg", "red-4.jpg"]
+        },
+        {
+          "name": "Сиреневый",
+          "hex": "#c8a2c8",
+          "images": ["grey-1.jpg", "grey-2.jpg", "grey-3.jpg", "grey-4.jpg"]
+        },
+        {
+          "name": "Серебряный",
+          "hex": "#c0c0c0",
+          "images": ["silver-1.jpg", "silver-2.jpg", "silver-3.jpg", "silver-4.jpg"]
+        },
+        {
+          "name": "Зелёный",
+          "hex": "#232e28",
+          "images": ["green-1.jpg", "green-2.jpg", "green-3.jpg", "green-4.jpg"]
+        },
+        {
+          "name": "Фиолетовый",
+          "hex": "#800080",
+          "images": ["purple-1.jpg", "purple-2.jpg", "purple-3.jpg", "purple-4.jpg"]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "cayenne",
+      "folder": "cayenne",
+      "image": "cayenne.avif",
+      "model": "Cayenne",
+      "subtitle": "Величественный и быстрый",
+      "description": "Porsche Cayenne — это внедорожник, который задал новые стандарты в сегменте. Он объединяет в себе простор и комфорт премиального SUV с невероятной мощью и спортивной управляемостью.",
+      "specs": {
+        "Двигатель": "3.0 V6 Turbo",
+        "Мощность": "353 л.с. (260 кВт)",
+        "Крутящий момент": "500 Нм",
+        "Разгон 0–100 км/ч": "6.0 с (5.7 с Sport Chrono)",
+        "Максимальная скорость": "248 км/ч",
+        "Объём двигателя": "2 995 см³",
+        "Привод": "Полный (AWD)",
+        "КПП": "8-ступенчатая Tiptronic S"
+      },
+      "price": "от 11 000 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Серый",
+          "hex": "#bbbbbb",
+          "images": ["grey-1.jpg", "grey-2.jpg", "grey-3.jpg", "grey-4.jpg"]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "panamera",
+      "folder": "panamera",
+      "image": "panamera-4s-gibrid.avif",
+      "model": "Panamera",
+      "subtitle": "Роскошь в движении",
+      "description": "Porsche Panamera — это четырехдверный спорткар. Он разрушает стереотипы, предлагая уровень комфорта представительского седана и при этом невероятную динамику и драйв, присущие моделям 911.",
+      "specs": {
+        "Двигатель": "2.9 V6 Twin-Turbo",
+        "Мощность": "353 л.с. (260 кВт)",
+        "Крутящий момент": "500 Нм",
+        "Разгон 0–100 км/ч": "5.3 с (5.1 с Sport Chrono)",
+        "Максимальная скорость": "272 км/ч",
+        "Объём двигателя": "2 894 см³",
+        "Привод": "Полный (AWD)",
+        "КПП": "8-ступенчатая PDK"
+      },
+      "price": "от 12 000 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Золотистый",
+          "hex": "#d4a017",
+          "images": ["gold-1.jpg", "gold-2.jpg", "gold-3.jpg", "gold-4.jpg"]
+        },
+        {
+          "name": "Красный",
+          "hex": "#b3121a",
+          "images": ["red-1.jpg", "red-2.jpg", "red-3.jpg", "red-4.jpg"]
+        },
+        {
+          "name": "Серый",
+          "hex": "#808080",
+          "images": ["grey-1.jpg", "grey-2.jpg", "grey-3.jpg", "grey-4.jpg"]
+        },
+        {
+          "name": "Серебряный",
+          "hex": "#c0c0c0",
+          "images": ["silver-1.jpg", "silver-2.jpg", "silver-3.jpg", "silver-4.jpg"]
+        },
+        {
+          "name": "Зелёный",
+          "hex": "#232e28",
+          "images": ["green-1.jpg", "green-2.jpg", "green-3.jpg", "green-4.jpg"]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category": "cayenne",
+      "folder": "cayenne-s-coupe",
+      "image": "cayenne-s-coupe.avif",
+      "model": "Cayenne S Coupe",
+      "subtitle": "Атлетизм без границ",
+      "description": "Porsche Cayenne S Coupe — это сочетание спортивного силуэта купе и практичности внедорожника. Более низкая линия крыши и мощный двигатель V6 делают его самым динамичным представителем семейства Cayenne.",
+      "specs": {
+        "Двигатель": "2.9 V6 Twin-Turbo",
+        "Мощность": "440 л.с. (324 кВт)",
+        "Крутящий момент": "550 Нм",
+        "Разгон 0–100 км/ч": "5.0 с",
+        "Максимальная скорость": "263 км/ч",
+        "Объём двигателя": "2 894 см³",
+        "Привод": "Полный (AWD)",
+        "КПП": "8-ступенчатая Tiptronic S"
+      },
+      "price": "от 14 500 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Серый",
+          "hex": "#808080",
+          "images": ["grey-1.jpg", "grey-2.jpg", "grey-3.jpg", "grey-4.jpg"]
+        },
+        {
+          "name": "Золотистый",
+          "hex": "#d4a017",
+          "images": ["gold-1.jpg", "gold-2.jpg", "gold-3.jpg", "gold-4.jpg"]
+        },
+        {
+          "name": "Зелёный",
+          "hex": "#232e28",
+          "images": ["green-1.jpg", "green-2.jpg", "green-3.jpg", "green-4.jpg"]
+        },
+        {
+          "name": "Синий",
+          "hex": "#003152",
+          "images": ["blue-1.jpg", "blue-2.jpg", "blue-3.jpg", "blue-4.jpg"]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category": "911",
+      "folder": "911-turbo-s",
+      "image": "turbo-s.avif",
+      "model": "911 Turbo S",
+      "subtitle": "Абсолютная мощь",
+      "description": "Porsche 911 Turbo S — это флагман модельного ряда, доведенный до совершенства. Невероятная тяга, система полного привода и активная аэродинамика позволяют этому автомобилю разгоняться до сотни быстрее большинства суперкаров.",
+      "specs": {
+        "Двигатель": "3.8 Twin-Turbo (оппозитный, 6 цил.)",
+        "Мощность": "650 л.с. (478 кВт)",
+        "Крутящий момент": "800 Нм",
+        "Разгон 0–100 км/ч": "2.7 с",
+        "Максимальная скорость": "330 км/ч",
+        "Объём двигателя": "3 745 см³",
+        "Привод": "Полный (AWD)",
+        "КПП": "8-ступенчатая PDK"
+      },
+      "price": "от 26 000 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Серый",
+          "hex": "#808080",
+          "images": ["grey-1.jpg", "grey-2.jpg", "grey-3.jpg", "grey-4.jpg"]
+        },
+        {
+          "name": "Серебряный",
+          "hex": "#c0c0c0",
+          "images": ["silver-1.jpg", "silver-2.jpg", "silver-3.jpg", "silver-4.jpg"]
+        },
+        {
+          "name": "Красный",
+          "hex": "#b3121a",
+          "images": ["red-1.jpg", "red-2.jpg", "red-3.jpg", "red-4.jpg"]
+        },
+        {
+          "name": "Зелёный",
+          "hex": "#232e28",
+          "images": ["green-1.jpg", "green-2.jpg", "green-3.jpg", "green-4.jpg"]
+        },
+        {
+          "name": "Синий",
+          "hex": "#003152",
+          "images": ["blue-1.jpg", "blue-2.jpg", "blue-3.jpg", "blue-4.jpg"]
+        },
+        {
+          "name": "Желтый",
+          "hex": "#FFFF66",
+          "images": ["yellow-1.jpg", "yellow-2.jpg", "yellow-3.jpg", "yellow-4.jpg"]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category": "911",
+      "folder": "911-gts",
+      "image": "carrera-gts.avif",
+      "model": "911 Carrera GTS",
+      "subtitle": "Идеальный баланс",
+      "description": "Porsche 911 Carrera GTS — это золотая середина между комфортом повседневной Carrera и трековым характером GT3. Спортивная подвеска, увеличенная мощность и уникальный дизайн делают её выбором настоящих энтузиастов.",
+      "specs": {
+        "Двигатель": "3.0 Twin-Turbo (оппозитный, 6 цил.)",
+        "Мощность": "480 л.с. (353 кВт)",
+        "Крутящий момент": "570 Нм",
+        "Разгон 0–100 км/ч": "3.3 с",
+        "Максимальная скорость": "311 км/ч",
+        "Объём двигателя": "2 981 см³",
+        "Привод": "Задний (RWD)",
+        "КПП": "8-ступенчатая PDK"
+      },
+      "price": "от 18 500 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Серый",
+          "hex": "#808080",
+          "images": ["grey-1.jpg", "grey-2.jpg", "grey-3.jpg", "grey-4.jpg"]
+        },
+        {
+          "name": "Красный",
+          "hex": "#b3121a",
+          "images": ["red-1.jpg", "red-2.jpg", "red-3.jpg", "red-4.jpg"]
+        },
+        {
+          "name": "Зелёный",
+          "hex": "#232e28",
+          "images": ["green-1.jpg", "green-2.jpg", "green-3.jpg", "green-4.jpg"]
+        },
+        {
+          "name": "Синий",
+          "hex": "#003152",
+          "images": ["blue-1.jpg", "blue-2.jpg", "blue-3.jpg", "blue-4.jpg"]
+        },
+        {
+          "name": "Желтый",
+          "hex": "#FFFF66",
+          "images": ["yellow-1.jpg", "yellow-2.jpg", "yellow-3.jpg", "yellow-4.jpg"]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category": "911",
+      "folder": "911-carrera-s-cabriolet",
+      "image": "carrera-s-cabriolet.avif",
+      "model": "911 Carrera S Cabriolet",
+      "subtitle": "Свобода в движении",
+      "description": "Porsche 911 Carrera S Cabriolet предлагает непревзойденное удовольствие от вождения под открытым небом. Легкая тканевая крыша и мощный двигатель S позволяют наслаждаться звуком оппозитного мотора и динамикой спорткара.",
+      "specs": {
+        "Двигатель": "3.0 Twin-Turbo (оппозитный, 6 цил.)",
+        "Мощность": "450 л.с. (331 кВт)",
+        "Крутящий момент": "530 Нм",
+        "Разгон 0–100 км/ч": "3.7 с",
+        "Максимальная скорость": "306 км/ч",
+        "Объём двигателя": "2 981 см³",
+        "Привод": "Задний (RWD)",
+        "КПП": "8-ступенчатая PDK"
+      },
+      "price": "от 16 500 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Серый",
+          "hex": "#808080",
+          "images": ["grey-1.jpg", "grey-2.jpg", "grey-3.jpg", "grey-4.jpg"]
+        },
+        {
+          "name": "Желтый",
+          "hex": "#FFFF66",
+          "images": ["yellow-1.jpg", "yellow-2.jpg", "yellow-3.jpg", "yellow-4.jpg"]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "category": "911",
+      "folder": "911-4gts",
+      "image": "targa-4-gts.avif",
+      "model": "911 Targa 4 GTS",
+      "subtitle": "Икона в открытом виде",
+      "description": "Porsche 911 Targa 4 GTS сочетает в себе уникальную концепцию Targa с легендарной серебряной дугой, полный привод и мощность версии GTS. Это автомобиль для тех, кто ценит стиль и не готов идти на компромиссы в динамике.",
+      "specs": {
+        "Двигатель": "3.0 Twin-Turbo (оппозитный, 6 цил.)",
+        "Мощность": "480 л.с. (353 кВт)",
+        "Крутящий момент": "570 Нм",
+        "Разгон 0–100 км/ч": "3.5 с",
+        "Максимальная скорость": "307 км/ч",
+        "Объём двигателя": "2 981 см³",
+        "Привод": "Полный (AWD)",
+        "КПП": "8-ступенчатая PDK"
+      },
+      "price": "от 20 000 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Красный",
+          "hex": "#b3121a",
+          "images": ["red-1.jpg", "red-2.jpg", "red-3.jpg", "red-4.jpg"]
+        },
+        {
+          "name": "Зелёный",
+          "hex": "#232e28",
+          "images": ["green-1.jpg", "green-2.jpg", "green-3.jpg", "green-4.jpg"]
+        },
+        {
+          "name": "Синий",
+          "hex": "#003152",
+          "images": ["blue-1.jpg", "blue-2.jpg", "blue-3.jpg", "blue-4.jpg"]
+        },
+        {
+          "name": "Желтый",
+          "hex": "#FFFF66",
+          "images": ["yellow-1.jpg", "yellow-2.jpg", "yellow-3.jpg", "yellow-4.jpg"]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "category": "taycan",
+      "folder": "taycan-turbo-s",
+      "image": "taycan-turbo-s.avif",
+      "model": "Taycan Turbo S",
+      "subtitle": "Электрический гиперкар",
+      "description": "Porsche Taycan Turbo S — это вершина электрической линейки. Два мощнейших электромотора, интеллектуальный полный привод и 800-вольтовая архитектура обеспечивают разгон, от которого захватывает дух, и полный контроль.",
+      "specs": {
+        "Двигатель": "Два синхронных электромотора",
+        "Мощность": "761 л.с. (с Overboost)",
+        "Крутящий момент": "1050 Нм",
+        "Разгон 0–100 км/ч": "2.8 с",
+        "Максимальная скорость": "260 км/ч",
+        "Батарея": "93.4 кВт⋅ч",
+        "Привод": "Полный (AWD)",
+        "КПП": "2-ступенчатая автоматическая"
+      },
+      "price": "от 22 000 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Фиолетовый",
+          "hex": "#800080",
+          "images": ["purple-1.jpg", "purple-2.jpg", "purple-3.jpg", "purple-4.jpg"]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "category": "taycan",
+      "folder": "taycan-sport-turismo",
+      "image": "taycan-sport-turismo.avif",
+      "model": "Taycan Sport Turismo",
+      "subtitle": "Практичная динамика",
+      "description": "Porsche Taycan Sport Turismo предлагает уникальный силуэт Shooting Brake. Он сохраняет всю электрическую мощь и драйв модели Taycan, но добавляет больше пространства в задней части и практичности для повседневного использования.",
+      "specs": {
+        "Двигатель": "Синхронный электромотор",
+        "Мощность": "326 л.с. (240 кВт)",
+        "Крутящий момент": "345 Нм",
+        "Разгон 0–100 км/ч": "5.4 с",
+        "Максимальная скорость": "230 км/ч",
+        "Батарея": "79.2 кВт⋅ч",
+        "Привод": "Задний (RWD)",
+        "КПП": "2-ступенчатая автоматическая"
+      },
+      "price": "от 11 500 000 ₽",
+      "colors": [
+        {
+          "name": "Белый",
+          "hex": "#f5f5f5",
+          "images": ["white-1.jpg", "white-2.jpg", "white-3.jpg", "white-4.jpg"]
+        },
+        {
+          "name": "Чёрный",
+          "hex": "#0a0a0a",
+          "images": ["black-1.jpg", "black-2.jpg", "black-3.jpg", "black-4.jpg"]
+        },
+        {
+          "name": "Красный",
+          "hex": "#b3121a",
+          "images": ["red-1.jpg", "red-2.jpg", "red-3.jpg", "red-4.jpg"]
+        },
+        {
+          "name": "Фиолетовый",
+          "hex": "#800080",
+          "images": ["purple-1.jpg", "purple-2.jpg", "purple-3.jpg", "purple-4.jpg"]
+        }
+      ]
+    }
+  ]
+}

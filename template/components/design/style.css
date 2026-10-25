@@ -1,0 +1,459 @@
+/* ============================================
+СТРАНИЦА ДИЗАЙНА
+Файл: template/components/design/style.css
+============================================ */
+
+/* --- 1. Общие настройки секций --- */
+.design-intro,
+.design-grid-section,
+.design-evolution {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-color: #0a0a0a; /* Очень темный фон для страницы дизайна */
+}
+
+/* --- 2. Вступление (Журнальный разворот) --- */
+.design-intro {
+    /* Мягкое золотое свечение сверху */
+    background: radial-gradient(circle at 50% 0%, rgba(212, 160, 23, 0.1) 0%, transparent 60%), #0a0a0a;
+    padding: 8rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.design-intro-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.design-intro-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.design-badge {
+    color: var(--color-gold, #d4a017);
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.design-intro-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--color-text, #fff);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.design-intro-text {
+    color: var(--color-text-muted, #aaa);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Правая колонка с цифрами */
+.design-intro-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-left: 2px solid rgba(212, 160, 23, 0.3);
+    padding-left: 3rem;
+}
+
+.intro-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-stat-num {
+    font-size: 3.5rem;
+    color: var(--color-gold, #d4a017);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+}
+
+.intro-stat-desc {
+    color: var(--color-text, #fff);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+/* --- 3. Сетка с деталями --- */
+.design-grid-section {
+    padding: 6rem 2rem;
+}
+
+.design-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.design-card {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    cursor: pointer;
+    background: var(--color-dark-gray, #111);
+}
+
+.design-card__img-wrap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.design-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+/* Затемнение снизу для читаемости текста */
+.design-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);
+    transition: opacity 0.4s ease;
+}
+
+.design-card:hover .design-card__img-wrap img {
+    transform: scale(1.08);
+}
+
+/* Контент внутри карточки */
+.design-card__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.5rem;
+    z-index: 2;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.design-card:hover .design-card__content {
+    transform: translateY(0);
+}
+
+.design-card__subtitle {
+    color: var(--color-gold, #d4a017);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.design-card__title {
+    color: var(--color-text, #fff);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+}
+
+.design-card__text {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.design-card:hover .design-card__text {
+    opacity: 1;
+    max-height: 150px; /* Увеличили, чтобы текст точно поместился */
+}
+
+/* ============================================
+4. БЛОК ЭВОЛЮЦИИ (СЛАЙДЕР)
+============================================ */
+.design-evolution {
+    padding: 6rem 2rem 8rem;
+    background: radial-gradient(circle at 50% 100%, rgba(212, 160, 23, 0.05) 0%, transparent 60%), #0a0a0a;
+}
+
+.evolution-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.evolution-title {
+    color: var(--color-text, #fff);
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.evolution-subtitle {
+    color: var(--color-gold, #d4a017);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Контейнер слайдера */
+.evolution-slider-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.evolution-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: ew-resize;
+    user-select: none;
+}
+
+/* Картинки */
+.evolution-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Обертка для верхней (старой) картинки */
+.evolution-img-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Начальная позиция ползунка */
+    height: 100%;
+    overflow: hidden;
+    border-right: 2px solid var(--color-gold, #d4a017);
+}
+
+/* ИСПРАВЛЕНИЕ БАГА: Картинка внутри обертки должна быть фиксированной ширины,
+   равной максимальной ширине всего слайдера, иначе она будет сплющиваться */
+.evolution-img-wrap .img-classic {
+    width: 100vw;
+    max-width: 1000px; /* Совпадает с max-width контейнера */
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%) sepia(20%);
+}
+
+/* Ползунок */
+.evolution-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--color-gold, #d4a017);
+    z-index: 10;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+/* Кружок на ползунке */
+.evolution-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: var(--color-gold, #d4a017);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 1.2rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease;
+}
+
+.evolution-slider:hover .evolution-button {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Бейджи с годами */
+.evolution-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    background: #000;
+    color: var(--color-text, #fff);
+    padding: 0.4rem 1.2rem;
+    border-radius: 3rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255,255,255,0.2);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.badge-left { left: 1.5rem; }
+.badge-right { right: 1.5rem; border-color: var(--color-gold, #d4a017); color: var(--color-gold, #d4a017); }
+
+/* Текст под слайдером */
+.evolution-desc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.evolution-desc-item {
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--color-gold, #d4a017);
+}
+
+.evolution-desc-item h4 {
+    color: var(--color-text, #fff);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.evolution-desc-item p {
+    color: var(--color-text-muted, #aaa);
+    font-size: 1rem;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* ============================================
+5. АДАПТИВ (МОБИЛЬНЫЕ УСТРОЙСТВА)
+============================================ */
+
+@media (max-width: 900px) {
+    .design-intro-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .design-intro-text-block {
+        align-items: center;
+    }
+
+    .design-intro-stats {
+        border-left: none;
+        padding-left: 0;
+        flex-direction: row;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    /* Перестраиваем сетку в одну колонку */
+    .design-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* --- ИСПРАВЛЕНИЕ КАРТОЧЕК НА МОБИЛЬНЫХ --- */
+    .design-card {
+        /* Убираем жесткие пропорции и делаем карточку гибкой */
+        aspect-ratio: auto;
+        display: flex;
+        flex-direction: column;
+        background: #151515; /* Темный фон для текстовой части */
+        border-radius: 1rem;
+    }
+
+    .design-card__img-wrap {
+        /* Возвращаем картинку в нормальный поток (сверху) */
+        position: relative;
+        height: 220px; /* Фиксированная высота фото */
+        width: 100%;
+    }
+
+    .design-card__content {
+        /* Текст теперь идет под картинкой */
+        position: relative;
+        padding: 1.5rem;
+        transform: translateY(0);
+    }
+
+    /* Убираем затемняющий градиент, он больше не нужен */
+    .design-card::after {
+        display: none;
+    }
+
+    /* Текст всегда виден */
+    .design-card__text {
+        opacity: 1;
+        max-height: none; /* Позволяем тексту занимать столько места, сколько нужно */
+        margin-top: 0.5rem;
+    }
+
+    .design-card__title {
+        font-size: 1.5rem; /* Чуть уменьшаем заголовок */
+    }
+}
+
+@media (max-width: 768px) {
+    .design-intro {
+        padding: 5rem 1rem;
+    }
+
+    .design-intro-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .design-intro-title {
+        font-size: 2rem;
+    }
+
+    .design-grid-section {
+        padding: 4rem 1rem;
+    }
+
+    .evolution-title {
+        font-size: 2rem;
+    }
+
+    .evolution-desc-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .evolution-badge {
+        font-size: 1rem;
+        padding: 0.3rem 0.8rem;
+        bottom: 1rem;
+    }
+
+    .evolution-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,239 @@
+/* ============================================
+КОМПОНЕНТ: СТРАНИЦА ТЕХНОЛОГИЙ
+Файл: template/components/tech/style.css
+============================================ */
+
+/* --- 1. Основная секция --- */
+.tech-section {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background: #080808;
+    padding: 6rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    overflow-x: hidden; /* Защита от горизонтального скролла при анимациях */
+}
+
+/* --- 2. Заголовок страницы --- */
+.tech-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.tech-badge {
+    color: var(--color-gold, #d4a017);
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.tech-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--color-text, #fff);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.tech-subtitle {
+    color: var(--color-text-muted, #aaa);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* --- 3. Сетка --- */
+.tech-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding-top: 2rem;
+}
+
+/* --- 4. Анимация появления при скролле --- */
+.tech-card--animated {
+    opacity: 0;
+    transform: translateY(40px);
+    /* Transition для появления + сохранение базовых переходов карточки */
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.tech-card--animated.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* ВАЖНО: После появления отключаем transition для transform,
+       чтобы 3D-наклон за мышкой работал моментально, без задержек! */
+    transition: opacity 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* --- 5. Базовая карточка --- */
+.tech-card {
+    position: relative;
+    background: var(--color-dark-gray, #111);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem 2rem;
+    overflow: hidden;
+    z-index: 1;
+    transform-style: preserve-3d; /* Для 3D-наклона */
+}
+
+/* Золотое свечение на фоне */
+.tech-card__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: var(--color-gold, #d4a017);
+    filter: blur(100px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+/* --- 6. Эффекты при наведении (Только для ПК) --- */
+@media (hover: hover) and (pointer: fine) {
+    .tech-card:hover {
+        border-color: rgba(212, 160, 23, 0.4);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .tech-card:hover .tech-card__glow {
+        opacity: 0.15;
+    }
+}
+
+/* --- 7. Контент внутри карточки --- */
+.tech-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    transform: translateZ(20px); /* 3D-эффект */
+}
+
+.tech-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(212, 160, 23, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold, #d4a017);
+    font-size: 1.3rem;
+    border: 1px solid rgba(212, 160, 23, 0.3);
+}
+
+.tech-card__subtitle {
+    color: #777;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.tech-card__title {
+    color: var(--color-text, #fff);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    transform: translateZ(30px);
+}
+
+/* Блок с цифрами */
+.tech-card__spec-wrap {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transform: translateZ(20px);
+}
+
+.tech-card__spec {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--color-gold, #d4a017);
+    line-height: 1;
+    font-variant-numeric: tabular-nums; /* Цифры не прыгают при счете */
+}
+
+.tech-card__spec-suffix {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gold, #d4a017);
+}
+
+.tech-card__spec-text {
+    color: #888;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%; /* Текст переносится на новую строку */
+}
+
+.tech-card__desc {
+    color: #888;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    transform: translateZ(10px);
+}
+
+/* --- 8. Доступность (Отключение анимаций) --- */
+@media (prefers-reduced-motion: reduce) {
+    .tech-card--animated {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .tech-card {
+        transform: none !important; /* Отключаем 3D-наклон на уровне CSS */
+    }
+}
+
+/* ============================================
+9. АДАПТИВ (МОБИЛЬНЫЕ УСТРОЙСТВА)
+============================================ */
+@media (max-width: 1200px) {
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .tech-section {
+        padding: 4rem 1rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+        padding: 2rem;
+    }
+
+    .tech-card__spec {
+        font-size: 2rem;
+    }
+}
